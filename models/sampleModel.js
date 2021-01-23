@@ -10,8 +10,11 @@ var sampleSchema = mongoose.Schema({
 	dataZlecenia:{type:Date, required:true},
 	wielkoscSerii:{type:mongoose.Decimal128},
 	wielkoscProby:{type:mongoose.Decimal128},
+	//wielkoscProbyDoRozdzielenia:{type:mongoose.Decimal128}, <-uzupełnić i ilość do dystrybucji
 	dataPoboru:{type:Date},
-	sampleStatus:{type:mongoose.Schema.Types.ObjectId, ref:'samplestatus'}
+	pobrana:{type:Boolean},
+	sampleStatus:{type:mongoose.Schema.Types.ObjectId, ref:'samplestatus'},
+	sampleLab:[{type:mongoose.Schema.Types.ObjectId, ref:'sampleLab'}]
 });
 
 var Sample = module.exports = mongoose.model('sample',sampleSchema);

@@ -1,8 +1,7 @@
 var mongoose = require('mongoose')
 
 var labSchema = mongoose.Schema({
-	wielkoscProby:{type:Decimal128},
-	data:{type:Date},
+	nazwa:{type:String, required:true},
 	sampleLabs:[{
 		type:mongoose.Schema.Types.ObjectId, ref:'samplelab'
 	}],
